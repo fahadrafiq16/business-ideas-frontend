@@ -100,25 +100,22 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="py-8 md:py-12 flex-grow">
-                <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {loading ? (
-                            <p className="text-center text-gray-600">Loading...</p>
-                        ) : (
+            {
+                loading ? 'Loading' :
+                    <section className="py-8 md:py-12 flex-grow">
+                        <div className="container mx-auto px-4">
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {Array.isArray(cardsData) && cardsData.length > 0 ? (
-                                    cardsData.map((idea, index) => (
+                                {(
+                                    Array.isArray(cardsData) && cardsData.map((idea, index) => (
                                         <BusinessCard key={idea.id || index} idea={idea} index={index} />
                                     ))
-                                ) : (
-                                    <p>No articles found.</p>
                                 )}
                             </div>
-                        )}
-                    </div>
-                </div>
-            </section>
+                        </div>
+                    </section>
+            }
+
+
         </>
     );
 };
