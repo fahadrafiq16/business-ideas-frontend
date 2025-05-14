@@ -11,9 +11,13 @@ const Home = () => {
     const [activeCategory, setActiveCategory] = useState('all');
     const [advancedFilters, setAdvancedFilters] = useState({});
     const [searchTitle, setSearchTitle] = useState('');
+    const [loading, setLoading] = useState(false);
 
     async function fetchArticles(category = 'all', extraFilters = {}, title = '') {
         try {
+
+            setLoading(true);
+
             const query = new URLSearchParams();
 
             if (category !== 'all') {
@@ -44,6 +48,8 @@ const Home = () => {
             setCardsData(response.data);
         } catch (error) {
             console.error('Error fetching articles:', error);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -97,12 +103,18 @@ const Home = () => {
             <section className="py-8 md:py-12 flex-grow">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {!cardsData ? (
-                            <p>Loading...</p>
+                        {loading ? (
+                            <p className="text-center text-gray-600">Loading...</p>
                         ) : (
-                            Array.isArray(cardsData) && cardsData.map((idea, index) => (
-                                <BusinessCard key={idea.id || index} idea={idea} index={index} />
-                            ))
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {Array.isArray(cardsData) && cardsData.length > 0 ? (
+                                    cardsData.map((idea, index) => (
+                                        <BusinessCard key={idea.id || index} idea={idea} index={index} />
+                                    ))
+                                ) : (
+                                    <p>No articles found.</p>
+                                )}
+                            </div>
                         )}
                     </div>
                 </div>
