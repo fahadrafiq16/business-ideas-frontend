@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const BusinessProfileContent = () => {
 
@@ -10,7 +11,7 @@ const BusinessProfileContent = () => {
     useEffect(() => {
         const fetchArticle = async () => {
             try {
-                const res = await fetch(`http://localhost:1337/api/articles/${documentId}?populate=*`);
+                const res = await fetch(`${BASE_URL}/api/articles/${documentId}?populate=*`);
                 const json = await res.json();
                 setArticle(json.data);
                 console.log(res);

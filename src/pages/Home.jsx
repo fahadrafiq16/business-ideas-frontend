@@ -4,6 +4,7 @@ import BusinessCard from '../components/BusinessCard';
 import axios from 'axios';
 import SearchBar from '../components/SearchBar';
 import Hero from '../components/Hero';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const Home = () => {
     const [cardsData, setCardsData] = useState([]);
@@ -37,7 +38,7 @@ const Home = () => {
                 .replace(/\+/g, ' ')        // fix + → space
                 .replace(/%2F/g, '/');      // fix %2F → /
 
-            const url = `http://localhost:1337/api/get-articles${queryString ? `?${queryString}` : ''}`;
+            const url = `${BASE_URL}/api/get-articles${queryString ? `?${queryString}` : ''}`;
             console.log('Fetching:', url);
             const response = await axios.get(url);
             setCardsData(response.data);

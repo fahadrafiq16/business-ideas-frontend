@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronUp, Building, CircleDollarSign, Star, Clock, Zap, Filter } from 'lucide-react';
 import axios from 'axios'
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export default function FilterBar({ activeFilter, onFilterChange, onAdvancedFilterChange }) {
     const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
@@ -21,7 +22,7 @@ export default function FilterBar({ activeFilter, onFilterChange, onAdvancedFilt
 
     useEffect(() => {
 
-        axios.get('http://localhost:1337/api/categories')
+        axios.get(`${BASE_URL}/api/categories`)
             .then(response => {
                 setMainCategories(response.data.data);
                 console.log('Fetched', response.data.data);
