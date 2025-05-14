@@ -35,7 +35,7 @@ export default function Hero({ onSearch }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Find Your Perfect Online Business</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Find Your Perfect1 Online Business</h1>
           <p className="text-xl opacity-90 mb-4">Discover profitable business ideas before everyone else</p>
 
           <div className="mb-8 mx-auto">
