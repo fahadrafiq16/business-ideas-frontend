@@ -190,9 +190,11 @@ tr {
     /* 20px */
   }
 
-  body {
+  .single-article-wrapper {
     font-size: 1.125rem;
-    /* 18px */
+    /* 20px */
+    line-height: 1.875rem;
+    /* 30px */
   }
 
   .article-single-content p, .article-single-content ul {
