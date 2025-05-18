@@ -201,6 +201,13 @@ tr {
     padding-left: 0;
     margin-left: 0;
   }
+  
+  .article-single-content ul li {
+    padding-left: 2rem;
+  }
+  .article-single-content ul li::before {
+    left: 0px;
+  }
 
   .article-content.px-6 {
     padding-left: 1rem !important;
