@@ -202,17 +202,18 @@ tr {
     margin-left: 0;
   }
   
-  .article-single-content ul li {
+  .article-single-content :not(p) + ul li {
     padding-left: 2rem;
   }
   .article-single-content ul li::before {
     left: 0px;
   }
 
-  .article-content.px-6 {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+  .article-content.px-6, .article-single-content.px-6 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
+ 
 }
 
 
