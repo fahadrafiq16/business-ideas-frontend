@@ -14,7 +14,7 @@ const BusinessProfile = () => {
             </header>
 
             <div className="relative">
-                <div className="mx-auto max-w-6xl px-6 -mt-8">
+                <div className="mx-auto max-w-6xl article-content px-6 -mt-8">
                     <div className="border bg-card text-card-foreground bg-white grid grid-cols-2 md:grid-cols-5 shadow-md rounded-lg">
                         <div className="text-center py-6">
                             <div className="text-xl font-bold text-primary">$$$</div>

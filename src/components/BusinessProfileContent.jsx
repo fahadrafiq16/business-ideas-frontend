@@ -27,7 +27,7 @@ const BusinessProfileContent = () => {
 
     return (
         <>
-            <main className="flex-grow px-6 py-16 bg-white">
+            <main className="flex-grow article-content px-6 py-16 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-8">
                         <div className="bg-white rounded-lg shadow overflow-hidden">
