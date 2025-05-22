@@ -156,6 +156,11 @@ table {
   border: 1px solid #d1d5db;
 }
 
+ul + p,
+figure.table + p {
+  margin-top: 2rem;
+}
+
 figure.table {
   overflow-x: auto;
 }
