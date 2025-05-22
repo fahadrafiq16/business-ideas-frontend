@@ -40,16 +40,29 @@ const BusinessCard = ({ idea, index }) => {
     return 'bg-red-400';
   };
 
-  const getCostLevel = (cost) => {
-    if (typeof cost === 'string') {
-      return { low: 1, 'medium-low': 2, medium: 3, 'medium-high': 4, high: 5 }[cost] || 4;
+  const dollarMap = {
+    '$': 1,
+    '$$': 2,
+    '$$$': 3,
+    '$$$$': 4,
+    '$$$$$': 5
+  };
+
+  const getCostLevel = (startupCost) => {
+    if (typeof startupCost === 'string') {
+      return dollarMap[startupCost] !== undefined ? dollarMap[startupCost] : 4;
     }
-    const num = Number(cost);
-    if (num <= 1000) return 1;
-    if (num <= 5000) return 2;
-    if (num <= 10000) return 3;
-    if (num <= 50000) return 4;
-    return 5;
+  
+    const num = Number(startupCost);
+    if (!isNaN(num)) {
+      if (num <= 1000) return 1;
+      if (num <= 5000) return 2;
+      if (num <= 10000) return 3;
+      if (num <= 50000) return 4;
+      return 5;
+    }
+  
+    return 4; // fallback
   };
 
   const {
