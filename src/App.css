@@ -105,6 +105,10 @@ h6 {
   margin-bottom: .5rem;
 }
 
+.article-single-content h3+p {
+  margin-bottom: 0;
+}
+
 .article-single-content ul {
   position: relative;
   margin-left: 3.5rem;
@@ -132,6 +136,14 @@ h6 {
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 0;
+}
+
+.article-single-content p:not(ul p) {
+  margin-bottom: 1.25rem;
+}
+
+.article-single-content h3 + p {
+  margin-bottom: 1.25rem;
 }
 
 .article-single-content table {
@@ -203,16 +215,32 @@ tr {
   }
   
   .article-single-content :not(p) + ul li {
+    position: relative;;
     padding-left: 2rem;
   }
+  li {
+    position: relative;;
+  }
+
+  .article-single-content p + ul li::before {
+    left: -34px;
+  }
+
+
   .article-single-content ul li::before {
-    left: 0px;
+    left: -1px;
+    top:-3px;
+    font-size: 24px;
   }
 
   .article-content.px-6, .article-single-content.px-6 {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+ 
+
+
  
 }
 
