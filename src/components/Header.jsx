@@ -80,24 +80,7 @@ export default function Header() {
                 Business Ideas
               </Link>
 
-              {isAdmin ? (
-                <>
-                  <Link to="/admin/dashboard" className="text-gray-600 hover:text-primary font-medium">
-                    Admin Dashboard
-                  </Link>
-                  <button
-                    onClick={handleLogout}
-                    className="text-left text-gray-600 hover:text-primary font-medium flex items-center gap-1.5"
-                  >
-                    <LogOut className="h-4 w-4" />
-                    Logout
-                  </button>
-                </>
-              ) : (
-                <Link to="/admin/login" className="text-gray-600 hover:text-primary font-medium">
-                  Admin Login
-                </Link>
-              )}
+             
             </div>
           </nav>
         )}
