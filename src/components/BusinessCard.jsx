@@ -103,7 +103,10 @@ const BusinessCard = ({ idea, index }) => {
               <span className={`inline-block ${badgeBg} rounded-full text-sm px-3 py-1 mb-2 ${textColor}`}>{index + 1}</span>
               <h3 className={`text-2xl font-bold ${textColor} line-clamp-2`}>{idea.title}</h3>
 
-              <p className={`${textOpacity} capitalize text-left`}>{idea.category.name}</p>
+              
+              <p className={`${textOpacity} capitalize text-left`}>
+  {idea.category?.name || 'Geen categorie'}
+</p>
 
             </div>
             <span className={`inline-block ${badgeBg} rounded-full text-sm px-3 py-1 ${textColor}`}>{businessType}</span>
